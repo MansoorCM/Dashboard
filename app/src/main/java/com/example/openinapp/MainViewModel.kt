@@ -10,20 +10,32 @@ import com.example.openinapp.network.dashboardApi
 import kotlinx.coroutines.launch
 
 class MainViewModel : ViewModel() {
-    private val _status: MutableLiveData<Dashboard> = MutableLiveData()
-    val status: LiveData<Dashboard>
-        get() = _status
+    private val _data: MutableLiveData<Dashboard> = MutableLiveData()
+    val data: LiveData<Dashboard>
+        get() = _data
+
+    private val _errorMessage: MutableLiveData<String> = MutableLiveData()
+    val errorMessage: LiveData<String>
+        get() = _errorMessage
 
     init {
         getDashboardData()
     }
 
-    fun getDashboardData() {
+    fun removeErrorMessage() {
+        _errorMessage.value = ""
+    }
+
+    private fun getDashboardData() {
         viewModelScope.launch {
-            val res = dashboardApi.retrofitService.getDashboardData(
-                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjU5MjcsImlhdCI6MTY3NDU1MDQ1MH0.dCkW0ox8tbjJA2GgUx2UEwNlbTZ7Rr38PVFJevYcXFI"
-            )
-            _status.value = res
+            try {
+                val res = dashboardApi.retrofitService.getDashboardData(
+                    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjU5MjcsImlhdCI6MTY3NDU1MDQ1MH0.dCkW0ox8tbjJA2GgUx2UEwNlbTZ7Rr38PVFJevYcXFI"
+                )
+                _data.value = res
+            } catch (e: Exception) {
+                _errorMessage.value = "Failed to obtain data. Make sure network is stable."
+            }
         }
     }
 }

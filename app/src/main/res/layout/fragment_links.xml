@@ -17,6 +17,36 @@
             android:background="@color/blue"
             tools:context=".ContactFragment">
 
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_dashboard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:layout_marginTop="40dp"
+                android:text="@string/dashboard"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/button_settings"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="@dimen/margin_normal"
+                android:backgroundTint="@color/blue_secondary"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintBottom_toBottomOf="@id/tv_dashboard"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_dashboard">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/wrench" />
+            </com.google.android.material.card.MaterialCardView>
+
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -27,17 +57,20 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:background="@color/grey_light"
+                    android:paddingStart="@dimen/margin_normal"
+                    android:paddingEnd="@dimen/margin_normal">
 
                     <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/tv_greetings"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
+                        android:layout_marginStart="@dimen/margin_normal"
                         android:layout_marginTop="32dp"
-                        android:text="Good morning"
+                        android:text="@string/good_morning"
                         android:textColor="@color/textgrey"
-                        android:textSize="16sp"
+                        android:textSize="@dimen/text_normal"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -76,7 +109,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="12dp"
-                                android:layout_marginTop="16dp"
+                                android:layout_marginTop="@dimen/margin_normal"
                                 android:text="Overview"
                                 android:textColor="@color/textgrey"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -159,17 +192,17 @@
                                         android:id="@+id/tv_cardclicks"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:layout_marginTop="16dp"
+                                        android:layout_marginTop="@dimen/margin_normal"
                                         android:text="123"
                                         android:textColor="@color/black"
-                                        android:textSize="16sp" />
+                                        android:textSize="@dimen/text_normal" />
 
                                     <com.google.android.material.textview.MaterialTextView
                                         android:id="@+id/tv_cardclicks_title"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginTop="4dp"
-                                        android:text="Today's clicks" />
+                                        android:text="@string/today_s_clicks" />
                                 </LinearLayout>
                             </com.google.android.material.card.MaterialCardView>
 
@@ -196,17 +229,17 @@
                                         android:id="@+id/tv_toplocation"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:layout_marginTop="16dp"
+                                        android:layout_marginTop="@dimen/margin_normal"
                                         android:text="Ahmedabad"
                                         android:textColor="@color/black"
-                                        android:textSize="16sp" />
+                                        android:textSize="@dimen/text_normal" />
 
                                     <com.google.android.material.textview.MaterialTextView
                                         android:id="@+id/tv_toplocation_title"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginTop="4dp"
-                                        android:text="Top Location" />
+                                        android:text="@string/top_location" />
                                 </LinearLayout>
                             </com.google.android.material.card.MaterialCardView>
 
@@ -233,17 +266,17 @@
                                         android:id="@+id/tv_topsource"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:layout_marginTop="16dp"
+                                        android:layout_marginTop="@dimen/margin_normal"
                                         android:text="Instagram"
                                         android:textColor="@color/black"
-                                        android:textSize="16sp" />
+                                        android:textSize="@dimen/text_normal" />
 
                                     <com.google.android.material.textview.MaterialTextView
                                         android:id="@+id/tv_topsource_title"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginTop="4dp"
-                                        android:text="Top Source" />
+                                        android:text="@string/top_source" />
                                 </LinearLayout>
                             </com.google.android.material.card.MaterialCardView>
                         </LinearLayout>
@@ -259,57 +292,59 @@
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:padding="12dp">
 
                             <ImageView
-                                android:id="@+id/imageView"
+                                android:id="@+id/iv_viewanalytics"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:importantForAccessibility="no"
                                 android:src="@drawable/arrows"
                                 app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toStartOf="@+id/materialTextView"
+                                app:layout_constraintEnd_toStartOf="@+id/tv_viewanalytics"
                                 app:layout_constraintHorizontal_bias="0.5"
                                 app:layout_constraintHorizontal_chainStyle="packed"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <com.google.android.material.textview.MaterialTextView
-                                android:id="@+id/materialTextView"
+                                android:id="@+id/tv_viewanalytics"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="View Analytics"
-                                android:textSize="24sp"
+                                android:layout_marginStart="12dp"
+                                android:gravity="center_vertical"
+                                android:text="@string/view_analytics"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_normal"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="0.5"
-                                app:layout_constraintStart_toEndOf="@+id/imageView"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:layout_constraintVertical_bias="1.0" />
+                                app:layout_constraintStart_toEndOf="@+id/iv_viewanalytics"
+                                app:layout_constraintTop_toTopOf="parent" />
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                     </com.google.android.material.card.MaterialCardView>
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/button_toplinks"
+                        style="@style/button_selected"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="40dp"
-                        android:text="Top Links"
-                        android:textSize="16sp"
-                        app:backgroundTint="@color/blue"
-                        app:cornerRadius="18dp"
+                        android:text="@string/top_links"
+                        android:textAllCaps="false"
                         app:layout_constraintStart_toStartOf="@id/button_viewanalytics"
                         app:layout_constraintTop_toBottomOf="@id/button_viewanalytics" />
 
-                    <Button
+                    <com.google.android.material.button.MaterialButton
                         android:id="@+id/button_recentlinks"
-                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        style="@style/Button.Unselected"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="24dp"
-                        android:text="Recent Links"
+                        android:text="@string/recent_links"
                         android:textAllCaps="false"
-                        android:textColor="@color/textgrey"
                         app:layout_constraintBottom_toBottomOf="@id/button_toplinks"
                         app:layout_constraintStart_toEndOf="@id/button_toplinks"
                         app:layout_constraintTop_toTopOf="@id/button_toplinks" />
@@ -328,6 +363,148 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal|center_vertical"
                             android:src="@drawable/search" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_view_toplinks"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:foregroundGravity="top"
+                        android:scrollbars="vertical"
+                        app:layoutManager="LinearLayoutManager"
+                        app:layout_constraintTop_toBottomOf="@id/button_toplinks"
+                        tools:listitem="@layout/list_item_link" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/button_viewalllinks"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:cardCornerRadius="8dp"
+                        app:layout_constraintTop_toBottomOf="@id/recycler_view_toplinks">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="12dp">
+
+                            <ImageView
+                                android:id="@+id/iv_viewalllinks"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:importantForAccessibility="no"
+                                android:src="@drawable/mail"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/tv_viewalllinks"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_chainStyle="packed"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tv_viewalllinks"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:gravity="center_vertical"
+                                android:text="@string/view_all_links"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_normal"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/iv_viewalllinks"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/button_talkwithus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="40dp"
+                        app:cardCornerRadius="8dp"
+                        app:layout_constraintTop_toBottomOf="@id/button_viewalllinks">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/green_light"
+                            android:padding="20dp">
+
+                            <ImageView
+                                android:id="@+id/iv_talkwithus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:importantForAccessibility="no"
+                                android:src="@drawable/whatsapp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tv_talkwithus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:gravity="center_vertical"
+                                android:text="@string/talk_with_us"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_normal"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/iv_talkwithus"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/button_faq"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_normal"
+                        android:layout_marginBottom="120dp"
+                        app:cardCornerRadius="8dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/button_talkwithus">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/blue_light"
+                            android:padding="20dp">
+
+                            <ImageView
+                                android:id="@+id/iv_faq"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:importantForAccessibility="no"
+                                android:src="@drawable/question_mark"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tv_faq"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:gravity="center_vertical"
+                                android:text="@string/frequently_asked_questions"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_normal"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/iv_faq"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
                     </com.google.android.material.card.MaterialCardView>
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>

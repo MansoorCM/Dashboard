@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="MyCardView" parent="@style/Widget.MaterialComponents.CardView">
-        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.MaterialCardView.Cut</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.MaterialCardView.Cut
+        </item>
     </style>
 
     <style name="ShapeAppearanceOverlay.MaterialCardView.Cut" parent="">
@@ -10,5 +12,15 @@
         <item name="cornerSizeTopLeft">16dp</item>
         <item name="cornerSizeBottomRight">0dp</item>
         <item name="cornerSizeBottomLeft">0dp</item>
+    </style>
+
+    <style name="Button.Unselected" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/textgrey</item>
+    </style>
+
+    <style name="button_selected">
+        <item name="android:textSize">@dimen/text_normal</item>
+        <item name="backgroundTint">@color/blue</item>
+        <item name="cornerRadius">18dp</item>
     </style>
 </resources>

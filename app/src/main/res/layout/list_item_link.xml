@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/item_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_defaultlink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:importantForAccessibility="no"
+                android:padding="8dp"
+                android:src="@drawable/amazon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_linkname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:ellipsize="end"
+                android:maxLength="18"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_normal"
+                app:layout_constraintStart_toEndOf="@id/iv_defaultlink"
+                app:layout_constraintTop_toTopOf="@id/iv_defaultlink"
+                tools:text="Can't Help Falling In Love - Elvis Presley (Boyce Avenue acoustic cover) on Spotify" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_clicks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_medium"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_linkname"
+                tools:text="2323" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_createdat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:textColor="@color/textgrey"
+                app:layout_constraintBottom_toBottomOf="@id/iv_defaultlink"
+                app:layout_constraintStart_toEndOf="@id/iv_defaultlink"
+                tools:text="22 Aug 2022" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_clicks_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_medium"
+                android:textColor="@color/textgrey"
+                app:layout_constraintBottom_toBottomOf="@id/iv_defaultlink"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="Clicks" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:background="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/iv_defaultlink" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_link"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:ellipsize="end"
+                android:maxLength="35"
+                android:padding="@dimen/margin_medium"
+                android:textColor="@color/blue_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_defaultlink"
+                tools:text="https://boyceavenue.inopenapp.com/boyce-avenue" />
+
+            <ImageView
+                android:id="@+id/iv_files"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_medium"
+                android:src="@drawable/files"
+                app:layout_constraintBottom_toBottomOf="@id/tv_link"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_link" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>
